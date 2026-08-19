@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ayushi Shiv — Senior Software Engineer, Distributed Systems &amp; Payments</title>
+<meta name="description" content="Ayushi Shiv — Senior Software Engineer building high-scale, fault-tolerant payment and distributed systems.">
+<style>
+  :root{
+    --navy-950:#0b1220;
+    --navy-900:#0f172a;
+    --navy-800:#1e293b;
+    --slate-600:#475569;
+    --slate-500:#64748b;
+    --slate-300:#cbd5e1;
+    --slate-200:#e2e8f0;
+    --slate-100:#f1f5f9;
+    --slate-50:#f8fafc;
+    --white:#ffffff;
+    --accent:#2563eb;
+    --accent-dark:#1d4ed8;
+    --accent-soft:#eff6ff;
+    --radius:12px;
+    --maxw:1040px;
+    font-size:16px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    color:var(--navy-900);
+    background:var(--white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .mono{font-family:"SF Mono",SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px;}
+
+  /* Nav */
+  header.site-nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(255,255,255,0.86);
+    backdrop-filter:saturate(180%) blur(10px);
+    border-bottom:1px solid var(--slate-200);
+  }
+  .nav-inner{
+    max-width:var(--maxw);margin:0 auto;padding:14px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .nav-name{font-weight:700;font-size:15px;letter-spacing:0.2px;}
+  .nav-links{display:flex;gap:28px;font-size:14px;font-weight:500;color:var(--slate-600);}
+  .nav-links a:hover{color:var(--accent);}
+  .nav-cta{
+    font-size:13.5px;font-weight:600;color:var(--white);
+    background:var(--navy-900);padding:8px 16px;border-radius:8px;
+  }
+  .nav-cta:hover{background:var(--accent);}
+  @media (max-width:720px){ .nav-links{display:none;} }
+
+  /* Hero */
+  .hero{
+    background:radial-gradient(1200px 480px at 15% -10%, #16213e 0%, var(--navy-950) 55%, var(--navy-950) 100%);
+    color:var(--white);
+    padding:88px 0 64px;
+  }
+  .eyebrow{
+    display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:0.6px;text-transform:uppercase;
+    color:#93c5fd;background:rgba(37,99,235,0.15);border:1px solid rgba(147,197,253,0.25);
+    padding:5px 12px;border-radius:999px;margin-bottom:20px;
+  }
+  .hero h1{font-size:42px;line-height:1.15;margin:0 0 14px;font-weight:800;letter-spacing:-0.5px;}
+  .hero h1 span{color:#93c5fd;}
+  .hero p.lede{
+    font-size:18px;color:#cbd5e1;max-width:620px;margin:0 0 32px;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:48px;}
+  .btn{
+    font-size:14.5px;font-weight:600;padding:11px 20px;border-radius:9px;
+    display:inline-flex;align-items:center;gap:8px;border:1px solid transparent;
+  }
+  .btn-primary{background:var(--accent);color:var(--white);}
+  .btn-primary:hover{background:var(--accent-dark);}
+  .btn-ghost{background:transparent;color:var(--white);border-color:rgba(255,255,255,0.28);}
+  .btn-ghost:hover{border-color:rgba(255,255,255,0.6);}
+
+  .stat-row{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+    background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.12);
+    border-radius:var(--radius);overflow:hidden;
+  }
+  .stat{background:rgba(255,255,255,0.03);padding:20px 18px;}
+  .stat .num{font-size:26px;font-weight:800;color:var(--white);}
+  .stat .label{font-size:12.5px;color:#94a3b8;margin-top:4px;}
+  @media (max-width:720px){
+    .hero h1{font-size:30px;}
+    .stat-row{grid-template-columns:repeat(2,1fr);}
+  }
+
+  /* Section shell */
+  section{padding:72px 0;}
+  section.alt{background:var(--slate-50);}
+  .section-head{margin-bottom:36px;}
+  .section-kicker{
+    font-size:12.5px;font-weight:700;letter-spacing:0.6px;text-transform:uppercase;color:var(--accent);
+    margin-bottom:8px;
+  }
+  .section-head h2{font-size:28px;margin:0 0 8px;font-weight:800;letter-spacing:-0.3px;}
+  .section-head p{color:var(--slate-600);font-size:15.5px;margin:0;max-width:640px;}
+
+  /* Work cards */
+  .work-grid{display:grid;grid-template-columns:1fr;gap:20px;}
+  .work-card{
+    border:1px solid var(--slate-200);border-radius:var(--radius);padding:26px 28px;
+    background:var(--white);
+  }
+  .work-card .row1{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;}
+  .work-card h3{font-size:19px;margin:0;font-weight:700;}
+  .work-card .org{
+    font-size:12.5px;font-weight:600;color:var(--accent);background:var(--accent-soft);
+    padding:4px 10px;border-radius:999px;white-space:nowrap;
+  }
+  .work-card .impact{
+    font-size:14.5px;color:var(--navy-800);font-weight:600;margin:12px 0 10px;
+  }
+  .work-card .desc{font-size:14.5px;color:var(--slate-600);margin:0 0 14px;}
+  .tech-tags{display:flex;flex-wrap:wrap;gap:8px;}
+  .tag{
+    font-size:12px;font-weight:600;color:var(--slate-600);background:var(--slate-100);
+    border:1px solid var(--slate-200);padding:4px 10px;border-radius:6px;
+  }
+
+  /* Experience timeline */
+  .timeline{border-left:2px solid var(--slate-200);margin-left:6px;padding-left:28px;}
+  .tl-item{position:relative;padding-bottom:36px;}
+  .tl-item:last-child{padding-bottom:0;}
+  .tl-item::before{
+    content:"";position:absolute;left:-33.5px;top:4px;width:11px;height:11px;border-radius:50%;
+    background:var(--accent);border:3px solid var(--accent-soft);
+  }
+  .tl-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:6px;}
+  .tl-role{font-size:17px;font-weight:700;}
+  .tl-org{color:var(--accent);font-weight:600;}
+  .tl-dates{font-size:13px;color:var(--slate-500);font-weight:600;}
+  .tl-bullets{margin:8px 0 0;padding-left:18px;color:var(--slate-600);font-size:14.5px;}
+  .tl-bullets li{margin-bottom:6px;}
+
+  /* Skills */
+  .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;}
+  .skill-group h4{
+    font-size:13px;text-transform:uppercase;letter-spacing:0.5px;color:var(--slate-500);
+    margin:0 0 12px;font-weight:700;
+  }
+  .skill-group .tech-tags{gap:8px;}
+
+  /* Education */
+  .edu-card{
+    border:1px solid var(--slate-200);border-radius:var(--radius);padding:24px 28px;
+    display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    background:var(--white);
+  }
+  .edu-card h3{margin:0 0 4px;font-size:17px;font-weight:700;}
+  .edu-card p{margin:0;color:var(--slate-600);font-size:14.5px;}
+  .edu-badge{
+    font-size:13px;font-weight:700;color:var(--accent);background:var(--accent-soft);
+    padding:6px 14px;border-radius:999px;
+  }
+
+  /* Contact */
+  .contact-box{
+    background:var(--navy-950);color:var(--white);border-radius:16px;
+    padding:48px 40px;text-align:center;
+  }
+  .contact-box h2{margin:0 0 10px;font-size:26px;font-weight:800;}
+  .contact-box p{color:#cbd5e1;font-size:15px;margin:0 0 26px;}
+  .contact-links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;}
+
+  footer{padding:32px 0;text-align:center;color:var(--slate-500);font-size:13px;}
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="nav-name">Ayushi Shiv</a>
+    <nav class="nav-links">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+    </nav>
+    <a href="#contact" class="nav-cta">Contact</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <span class="eyebrow">Open to Senior / Lead Engineering roles · Remote</span>
+    <h1>I build payment infrastructure that <span>isn't allowed to fail.</span></h1>
+    <p class="lede">
+      Senior Software Engineer with 8+ years designing and scaling distributed payment systems —
+      gateway integrations, wallet migrations, and resilience engineering that keep money moving
+      for millions of users, reliably, at scale.
+    </p>
+    <div class="hero-ctas">
+      <a class="btn btn-primary" href="mailto:ayushishiv1996@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayushishiv-693b6a137" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="resume.pdf" target="_blank" rel="noopener">Download resume</a>
+    </div>
+    <div class="stat-row">
+      <div class="stat"><div class="num">8+</div><div class="label">Years of experience</div></div>
+      <div class="stat"><div class="num">100K+</div><div class="label">Daily transactions handled</div></div>
+      <div class="stat"><div class="num">2M+</div><div class="label">Users migrated, zero fund loss</div></div>
+      <div class="stat"><div class="num">98%</div><div class="label">Peak refund success rate</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">Selected Work</div>
+      <h2>Systems I've architected and shipped</h2>
+      <p>Five projects that show the range — real-time fraud checks, large-scale migrations, and the resilience engineering that keeps payment systems trustworthy under load.</p>
+    </div>
+    <div class="work-grid">
+
+      <div class="work-card">
+        <div class="row1">
+          <h3>PayWithQR</h3>
+          <span class="org">Swiggy</span>
+        </div>
+        <p class="desc">Architected a real-time QR payment validation and fraud-check solution to reduce dependency on cash-on-delivery, integrating live fraud signals into the checkout path without adding user-facing latency.</p>
+        <div class="impact">Impact: Reduced COD dependency with real-time fraud validation at checkout</div>
+        <div class="tech-tags">
+          <span class="tag">Go</span><span class="tag">Kafka</span><span class="tag">Redis</span><span class="tag">Microservices</span>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="row1">
+          <h3>Refund Retry &amp; Resilience Engine</h3>
+          <span class="org">Swiggy</span>
+        </div>
+        <p class="desc">Designed a retry system combining circuit breakers, idempotency guarantees, and backoff strategies to make refund processing resilient to partner and network failures at scale.</p>
+        <div class="impact">Impact: Refund success rate 70% → 98%, 50K+ refunds/day, 85% less manual effort</div>
+        <div class="tech-tags">
+          <span class="tag">Go</span><span class="tag">Kafka</span><span class="tag">Circuit Breakers</span><span class="tag">Idempotency</span>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="row1">
+          <h3>Swiggy Money Wallet Migration</h3>
+          <span class="org">Swiggy</span>
+        </div>
+        <p class="desc">Led the migration of Swiggy's wallet platform for its full user base, building a robust rollback mechanism so the migration could be reversed safely at any stage if issues surfaced.</p>
+        <div class="impact">Impact: 2M+ users migrated with zero fund loss and a full rollback safety net</div>
+        <div class="tech-tags">
+          <span class="tag">Java</span><span class="tag">DynamoDB</span><span class="tag">MySQL</span>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="row1">
+          <h3>Multi-Gateway Payment Platform</h3>
+          <span class="org">Swiggy</span>
+        </div>
+        <p class="desc">Led integration of 8+ payment gateways, designing standardized, scalable adapters so new gateways could be onboarded quickly without touching core checkout logic.</p>
+        <div class="impact">Impact: 100K+ daily transactions at &lt;500ms p99 latency across 8+ gateways</div>
+        <div class="tech-tags">
+          <span class="tag">gRPC</span><span class="tag">Spring Boot</span><span class="tag">AWS</span>
+        </div>
+      </div>
+
+      <div class="work-card">
+        <div class="row1">
+          <h3>Multi-Wallet Refund System</h3>
+          <span class="org">Myntra Jabong</span>
+        </div>
+        <p class="desc">Built a dead-letter-queue-backed refund retry system with idempotency guarantees across multiple wallet types, eliminating a large monthly volume of manual refund processing.</p>
+        <div class="impact">Impact: Refund success 65% → 98%, eliminating 15K+ manual refunds a month</div>
+        <div class="tech-tags">
+          <span class="tag">Go</span><span class="tag">Java</span><span class="tag">DLQ</span><span class="tag">MongoDB</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">Experience</div>
+      <h2>8+ years, four companies, one thread: payments at scale</h2>
+    </div>
+    <div class="timeline">
+
+      <div class="tl-item">
+        <div class="tl-head">
+          <div><span class="tl-role">Software Development Engineer II</span> · <span class="tl-org">Swiggy</span></div>
+          <div class="tl-dates">Sept 2021 – Present</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Architected PayWithQR and led integration of 8+ payment gateways handling 100K+ daily transactions at &lt;500ms p99 latency</li>
+          <li>Designed a refund retry system improving success rate 70% → 98%, cutting manual effort by 85%</li>
+          <li>Delivered a 2M+ user wallet migration with zero fund loss; mentor 5+ engineers on system design and production readiness</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-head">
+          <div><span class="tl-role">Software Development Engineer I</span> · <span class="tl-org">Myntra Jabong (Flipkart Group)</span></div>
+          <div class="tl-dates">Sept 2019 – Aug 2021</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Redesigned the paisa-apportioning algorithm, reducing refund disputes by 40%</li>
+          <li>Built a multi-wallet refund retry system improving success from 65% to 98%, eliminating 15K+ manual refunds/month</li>
+          <li>Owned features end-to-end — design, production rollout, and on-call</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-head">
+          <div><span class="tl-role">Software Developer</span> · <span class="tl-org">CarWale (CarTrade Tech)</span></div>
+          <div class="tl-dates">Jun 2018 – Sept 2019</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Built 8+ microservices spanning auth, payments, offers, and user systems</li>
+          <li>Designed DB schemas and Elasticsearch indices achieving sub-100ms query latency</li>
+        </ul>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-head">
+          <div><span class="tl-role">SDE Intern</span> · <span class="tl-org">Amazon</span></div>
+          <div class="tl-dates">May 2017 – Jul 2017</div>
+        </div>
+        <ul class="tl-bullets">
+          <li>Built an event processing pipeline using SQS and SNS with encryption; achieved 90% test coverage</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">Skills</div>
+      <h2>What I build with</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Languages</h4>
+        <div class="tech-tags">
+          <span class="tag">Go</span><span class="tag">Java</span><span class="tag">C#</span><span class="tag">JavaScript</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Backend</h4>
+        <div class="tech-tags">
+          <span class="tag">Microservices</span><span class="tag">gRPC</span><span class="tag">REST APIs</span><span class="tag">Spring Boot</span><span class="tag">Event-Driven Systems</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Data &amp; Storage</h4>
+        <div class="tech-tags">
+          <span class="tag">MySQL</span><span class="tag">DynamoDB</span><span class="tag">MongoDB</span><span class="tag">Elasticsearch</span><span class="tag">Redis</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Messaging</h4>
+        <div class="tech-tags">
+          <span class="tag">Kafka</span><span class="tag">RabbitMQ</span><span class="tag">AWS SQS/SNS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Cloud &amp; Infra</h4>
+        <div class="tech-tags">
+          <span class="tag">AWS (EC2, S3, Lambda, IAM)</span><span class="tag">Docker</span><span class="tag">Kubernetes</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Observability</h4>
+        <div class="tech-tags">
+          <span class="tag">Prometheus</span><span class="tag">Grafana</span><span class="tag">ELK</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Core Concepts</h4>
+        <div class="tech-tags">
+          <span class="tag">High Availability</span><span class="tag">Circuit Breakers</span><span class="tag">Retry</span><span class="tag">Idempotency</span><span class="tag">Sharding</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="section-kicker">Education</div>
+      <h2>Background</h2>
+    </div>
+    <div class="edu-card">
+      <div>
+        <h3>B.Tech, Computer Science &amp; Engineering</h3>
+        <p>Maulana Azad National Institute of Technology (MANIT), Bhopal · 2014 – 2018</p>
+      </div>
+      <span class="edu-badge">CGPA 8.59</span>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-box">
+      <h2>Let's talk</h2>
+      <p>Open to senior and lead engineering roles in fintech, marketplaces, and infrastructure — remote-friendly.</p>
+      <div class="contact-links">
+        <a class="btn btn-primary" href="mailto:ayushishiv1996@gmail.com">ayushishiv1996@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayushishiv-693b6a137" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    &copy; <span id="year"></span> Ayushi Shiv. Built with a single HTML file, deployed on GitHub Pages.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
