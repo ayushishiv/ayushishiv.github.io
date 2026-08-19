@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ayushi Shiv — Senior Software Engineer, Distributed Systems &amp; Payments</title>
 <meta name="description" content="Ayushi Shiv — Senior Software Engineer building high-scale, fault-tolerant payment and distributed systems.">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 <style>
   :root{
     --navy-950:#0b1220;
@@ -204,7 +205,8 @@
       for millions of users, reliably, at scale.
     </p>
     <div class="hero-ctas">
-      <a class="btn btn-primary" href="mailto:ayushishiv1996@gmail.com">Email me</a>
+      <a class="btn btn-primary" href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URL});return false;">Book a call</a>
+      <a class="btn btn-ghost" href="mailto:ayushishiv1996@gmail.com">Email me</a>
       <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayushi-shiv-693b6a137/" target="_blank" rel="noopener">LinkedIn</a>
       <a class="btn btn-ghost" href="Ayushi%20Shiv%20Resume-26%20(2).pdf" target="_blank" rel="noopener">Download resume</a>
     </div>
@@ -422,8 +424,9 @@
       <h2>Let's talk</h2>
       <p>Open to senior and lead engineering roles in fintech, marketplaces, and infrastructure — remote-friendly.</p>
       <div class="contact-links">
-        <a class="btn btn-primary" href="mailto:ayushishiv1996@gmail.com">ayushishiv1996@gmail.com</a>
-        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayushishiv-693b6a137" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-primary" href="" onclick="Calendly.initPopupWidget({url: CALENDLY_URL});return false;">Book a call</a>
+        <a class="btn btn-ghost" href="mailto:ayushishiv1996@gmail.com">ayushishiv1996@gmail.com</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/ayushi-shiv-693b6a137/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </div>
   </div>
@@ -437,7 +440,14 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ── Calendly setup ──────────────────────────────────────────────
+  // 1. Create your free account at https://calendly.com
+  // 2. Create an event type (e.g. "15 Minute Intro Call")
+  // 3. Copy its scheduling link and paste it below, replacing the placeholder
+  var CALENDLY_URL = "https://calendly.com/YOUR-CALENDLY-USERNAME/intro-call";
 </script>
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 
 </body>
 </html>
